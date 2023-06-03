@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Simple web Development Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: sticky;
+			top: 0;
+			cursor: pointer;
+            shadow color: black;
+		}
+
+		.background {
+			background: white;
+			background-blend-mode: darken;
+			background-size: cover;
+		}
+
+		.nav-list {
+			width: 70%;
+			display: flex;
+			align-items: center;
+		}
+
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.logo img {
+			width: 180px;
+			border-radius: 50px;
+		}
+
+		.nav-list li {
+			list-style: none;
+			padding: 26px 30px;
+		}
+
+		.nav-list li a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.nav-list li a:hover {
+			color: grey;
+		}
+
+		.rightnav {
+			width: 30%;
+			text-align: right;
+		}
+        .leftnav{
+            text-align: left;
+        }
+		#search {
+			padding: 5px;
+			font-size: 17px;
+			border: 2px solid grey;
+			border-radius: 9px;
+		}
+
+		.firstsection {
+			background-color: white;
+			height: 400px;
+		}
+
+		.secondsection {
+			background-color: rgb(23, 23, 156);
+			height: 100%;
+		}
+
+		.box-main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: black;
+			max-width: 80%;
+			margin: auto;
+			height: 80%;
+		}
+
+		.firsthalf {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.secondhalf {
+			width: 30%;
+		}
+
+		.secondhalf img {
+			width: 70%;
+			border: 4px solid white;
+			border-radius: 150px;
+			display: block;
+			margin: auto;
+		}
+
+		.text-big {
+			font-family: 'Piazzolla', serif;
+			font-weight: bold;
+			font-size: 35px;
+		}
+
+		.text-small {
+			font-size: 18px;
+		}
+
+		.btn {
+			padding: 8px 20px;
+			margin: 7px 0;
+			border: 2px solid white;
+			border-radius: 8px;
+			background: none;
+			color: rgb(8, 1, 1);
+			cursor: pointer;
+		}
+
+		.btn-sm {
+			padding: 6px 10px;
+			vertical-align: middle;
+            background: #000;
+            color: white;
+		}
+
+		.section {
+			height: 400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 90%;
+			margin: auto;
+		}
+
+		.section-Left {
+			flex-direction: row-reverse;
+		}
+
+		.paras {
+			padding: 0px 65px;
+		}
+
+		.thumbnail img {
+			width: 250px;
+			border: 2px solid black;
+			border-radius: 26px;
+			margin-top: 19px;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.text-footer {
+			text-align: center;
+			padding: 30px 0;
+			font-family: 'Ubuntu', sans-serif;
+			display: flex;
+			justify-content: center;
+			color: white;
+		}
+
+        * {box-sizing:border-box}
+
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+        
+        /* Hide the images by default */
+        .mySlides {
+          display: none;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          margin-top: -22px;
+          padding: 16px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+        
+          .lable{
+            color: white;
+          }
+	</style>
+</head>
+
+<body>
+	<nav class="navbar background">
+		<ul class="nav-list">
+			<div class="leftnav">
+                <div class="logo">
+                    <img src= "big_dipper_logo.jpg">
+                </div>
+            </div>
+            
+			<li><a href="#Home">Home</a></li>
+			<li><a href="#About">About</a></li>
+            <li><a href="#Contact">Contact</a></li>
+			<li><a href="#PoSP">PoSP</a></li>
+			<li><a href="#Login">Login</a></li>
+            <li><button class="btn btn-sm"> <b>GET A QUOTE</b></button></a></li>
+		</ul>
+	</nav>
+ 
+    <div class="container">
+        <h2></h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+      
+            <div class="item active">
+              <img src="1.jpg" alt="Los Angeles" style="width:100%; ">
+              <div class="carousel-caption">
+                <h3 style="color: black">Smart Insurance for a Smart Future </h3>
+                <p style="color: black">Secure Your Future with Our Smart Insurance Solutions that Keep You Ahead of Life's Challenges with Confidence</p>
+                <button class="btn btn-sm"> <b>Contact Us</b></button>
+              </div>
+            </div>
+      
+            <div class="item">
+              <img src="2.jpg" alt="Chicago" style="width:100%;">
+              <div class="carousel-caption">
+                <h3 style="color: black">Join Our Team and Become a POSP Agent Today!</h3>
+                <p style="color: black">
+                    Unlock Your Potential with Our POSP Insurance Agent Program</p>
+                    <button class="btn btn-sm"> <b>POSP</b></button>
+              </div>
+            </div>
+          
+            <div class="item">
+              <img src="3.jpg" alt="New York" style="width:100%;">
+              <div class="carousel-caption">
+                <h3 style="color: black"> Insurance Made Easy, Claims Made Simple</p>
+                </h3>
+                <p style="color: black">   
+                    Protecting Your Life, Securing Your Future - Simplified Tailored Insurance Solutions for Every Need and Budget   <br>       
+                    <button class="btn btn-sm"> <b>Contact Us</b></button>
+                </div>
+            </div>
+        
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+   <div>
+    <p>
+
+    </p>
+   </div>
+	<section class="secondsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<ul class="nav-list">   
+                    <li><i class="ri-truck-line"></i><a href="#" style="color: white">commercial-vehicle</a></li>
+                    <li><a href="#" style="color: white">Car Insurance</a></li>
+                    <li><a href="#" style="color: white">Helth Insurance</a></li>
+                    <li><a href="#" style="color: white">Bike Insurance</a></li>
+                    <li><a href="#" style="color: white">Travel Insurance</a></li>
+                    <li><a href="#" style="color: white">Home Insurance</a></li>
+                </ul>
+			</div>
+		</div>
+	</section>
+
+  
+
+
+	<section class="section">
+		<div class="paras">
+			<h1 class="sectionTag text-big">ABOUT US</h1>
+			<p class="sectionSubTag text-small">				
+            At Big Dipper, we believe in providing comprehensive insurance solutions to meet <br> the diverse needs of our customers. 
+             With 10+ years of experience in the industry, we  <br> have established ourselves as a
+              reliable and trustworthy partner for individuals and <br> businesses alike. <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; Our team of experts is dedicated to helping our clients navigate the complex world of <br> insurance,
+                offering guidance and support every step of the way. We work with a wide <br> range of insurance
+                 providers to offer the best possible coverage options at <br> competitive rates.
+			</p>
+		</div>
+		<div class="thumbnail">
+			<img src= "ABOUT_US_1.jpg" alt="laptop image">
+		</div>
+	</section>
+
+<div>
+    <p>
+        
+    </p>
+   </div>
+	<section class="secondsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<ul class="nav-list" >   
+                    <li><label for="lable" class="lable" >1 <br> Office </label> </li>
+                    <li><label for="" class="lable">4.5 <br>Rating </label></li>
+                    <li><label for="" class="lable">30+ <br>PoSP Agent </label> </li>
+                    <li><label for="" class="lable">94% <br>Happy Customers</label> </li>
+                </ul>
+			</div>
+		</div>
+	</section>
+
+    
+    <section class="section">
+		<div class="paras">
+			<h1 class="sectionTag text-big">Become PoSP</h1>
+			<p class="sectionSubTag text-small"> 				
+                START YOUR JOURNEY TO SUCCESS AS A PoSP  INSURANCE AGENT <br>
+                Become a trusted partner with us and offer a wide range of insurance products to <br>
+                 your customers. As a Point of Sales Person (PoSP), you'll have access to our <br> 
+                 comprehensive portfolio of insurance plans, as well as training and support to help <br>
+                 you succeed. Join us today and grow your business.	
+                 <br> <br>
+                Comprehensive product portfolio - You'll have access to a wide range of <br> insurance products to offer your customers. <br>
+                Lucrative commission structure - We offer competitive commission rates, <br> allowing you to earn more while you sell. <br>
+                Extensive training and support - We provide training and support to help <br> you succeed in your role as a PoSP. <br>
+                Flexible work hours - You can work at your own pace and schedule, <br> making it a great opportunity for those who want to earn extra income. <br>	
+        	</p>
+		</div>
+		<div class="thumbnail">
+			<img src= "PoSP_1.jpg" alt="laptop image">
+		</div>
+	</section>
+
+    <section class="section">
+        <div class="paras">
+        <h1 class="sectionTag text-big" style="font-size: 90"> <center>OUR PARTNERS</center> </h1>
+        <div>
+			<img src= "pat.png" alt="laptop image"  width="100%">
+		</div>
+        </div>
+	</section>
+
+
+    
+	<footer class="background" style="background-color: rgb(123, 123, 222)">
+		<p class="text-footer" style="color: black">
+			Copyright ©-All rights are reserved
+		</p>
+	</footer>
+</body>
+
+</html>
+
+
